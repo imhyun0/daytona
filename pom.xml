@@ -59,6 +59,13 @@
   				<encoding>utf-8</encoding>
   			</configuration>
   		</plugin>
+		<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.3</version>
+				<configuration>
+					<warSourceDirectory>webapp</warSourceDirectory>
+				</configuration>
+			</plugin>
   	</plugins>
   </build>
 </project>  
