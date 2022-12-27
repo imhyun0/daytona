@@ -10,11 +10,11 @@ permissions:
     group: ec2-user
 hooks:
   ApplicationStop:
-    - location: stop.sh
+    - location: cicd/stop.sh
       runas: ec2-user
   BeforeInstall:
     - location: cicd/before_install.sh
       runas: ec2-user
   ApplicationStart:
-    - location: start.sh
+    - location: cicd/start.sh
       runas: ec2-user
