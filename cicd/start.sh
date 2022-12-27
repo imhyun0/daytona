@@ -4,11 +4,11 @@ WAS_DIR=/home/ec2-user/applications
 WAS_ENG_DIR=/usr/local/tomcat8/bin
 WAS_ADM_USER=ec2-user
 WORKING_DIR=/home/ec2-user/deploy
-SORC_WAR_FILE=$(ls /home/ec2-user/deploy/*.war)
+SORC_WAR_FILE=$(ls /home/ec2-user/deploy/target/*.war)
 WAR_FILE=simpleweb1.war
 
 echo "run application_start!!!"
-cp ${WORKING_DIR}/${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE}
+sudo cp ${WORKING_DIR}/${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE}
 #chown -R ${WAS_ADM_USER}:${WAS_ADM_USER} ${WORKING_DIR}
 #su - ${WAS_ADM_USER} -c "cp ${WORKING_DIR}/${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE}"
 
