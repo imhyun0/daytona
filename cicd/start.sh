@@ -8,7 +8,8 @@ SORC_WAR_FILE=$(ls /home/ec2-user/deploy/target/*.war)
 WAR_FILE=simpleweb1.war
 
 echo "run application_start!!!"
-sudo cp ${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE}
+cp ${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE}
+sudo systemctl start tomcat8
 #chown -R ${WAS_ADM_USER}:${WAS_ADM_USER} ${WORKING_DIR}
 #su - ${WAS_ADM_USER} -c "cp ${WORKING_DIR}/${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE}"
 
