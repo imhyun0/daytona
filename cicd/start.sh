@@ -8,7 +8,7 @@ SORC_WAR_FILE=$(ls /home/ec2-user/deploy/target/*.war)
 WAR_FILE=simpleweb1.war
 
 echo "run application_start!!!"
-sudo cp ${WORKING_DIR}/${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE}
+sudo cp ${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE}
 #chown -R ${WAS_ADM_USER}:${WAS_ADM_USER} ${WORKING_DIR}
 #su - ${WAS_ADM_USER} -c "cp ${WORKING_DIR}/${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE}"
 
