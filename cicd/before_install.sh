@@ -11,9 +11,9 @@ if ls ${WORKING_DIR}/ 1> deploy.log 2>&1; then
     echo "remove deploy target folder" >> /home/ec2-user/deploy.log
 fi
 
-if ls ${WORKING_DIR}/simpleweb1 1> deploy.log 2>&1; then
-    rm -rf ${WORKING_DIR}/simpleweb1
-    echo "remove simple folder" >> /home/ec2-user/deploy.log
+if ls ${WAS_DIR}/simpleweb1 1> deploy.log 2>&1; then
+    rm -rf ${WAS_DIR}/simpleweb1
+    echo "remove simpleweb1 folder" >> /home/ec2-user/deploy.log
 fi
 
 if [ -e ${WAS_DIR}/${WAR_FILE} ]; then
