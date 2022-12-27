@@ -5,11 +5,11 @@ WAS_ADM_USER=ec2-user
 echo "application_stop!!!"
 
 if [ -d /home/ec2-user/deploy ]; then
-    sudo rm -rf /home/ec2-user/deploy/
+    sudo rm -rf /home/ec2-user/deploy/ >> deploy.log
 fi
-    sudo mkdir -vp /home/ec2-user/deploy/
+    sudo mkdir -vp /home/ec2-user/deploy/ >> deploy.log
 
-sudo systemctl stop tomcat8
+sudo systemctl stop tomcat8 >> deploy.log
 
 
 # su - $WAS_ADM_USER -c "(source ${WAS_ENG_DIR}/shutdown.sh)"
