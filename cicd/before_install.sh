@@ -7,10 +7,10 @@ WAR_FILE=*.war
 
 echo "before_install !!!"
 if ls ${WORKING_DIR}/ 1> deploy.log 2>&1; then
-    rm -rf ${WORKING_DIR} >> deploy.log
+    rm -rf ${WORKING_DIR} >> /home/ec2-user/deploy.log
 fi
 
 if [ -e ${WAS_DIR}/${WAR_FILE} ]; then
-    rm ${WAS_DIR}/${WAR_FILE} >> deploy.log
+    rm ${WAS_DIR}/${WAR_FILE} >> /home/ec2-user/deploy.log
     # su - ${WAS_ADM_USER} -c "rm ${WAS_DIR}/${WAR_FILE}"
 fi
