@@ -14,6 +14,7 @@ fi
 
 sudo systemctl stop tomcat8
 echo "stop tomcat" >> /home/ec2-user/deploy.log
+systemctl status tomcat8.service | grep Active >> deploy.log
 
 
 # su - $WAS_ADM_USER -c "(source ${WAS_ENG_DIR}/shutdown.sh)"
