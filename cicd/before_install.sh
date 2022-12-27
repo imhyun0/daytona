@@ -6,12 +6,12 @@ WORKING_DIR=/home/ec2-user/deploy/target
 WAR_FILE=*.war
 
 echo "before_install !!!" >> /home/ec2-user/deploy.log
-if ls ${WORKING_DIR}/ 1> deploy.log 2>&1; then
+if ls ${WORKING_DIR}/ 1> /dev/null 2>&1; then
     rm -rf ${WORKING_DIR}
     echo "remove deploy target folder" >> /home/ec2-user/deploy.log
 fi
 
-if ls ${WAS_DIR}/simpleweb1 1> deploy.log 2>&1; then
+if ls ${WAS_DIR}/simpleweb1 1> /dev/null 2>&1; then
     rm -rf ${WAS_DIR}/simpleweb1
     echo "remove simpleweb1 folder" >> /home/ec2-user/deploy.log
 fi
