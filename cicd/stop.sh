@@ -2,14 +2,17 @@
 WAS_ENG_DIR=/usr/local/tomcat8/bin
 WAS_ADM_USER=ec2-user
 
-echo "application_stop!!!"
+echo "application_stop!!!" >> /home/ec2-user/deploy.log
 
 if [ -d /home/ec2-user/deploy ]; then
-    echo remove deploy folder `sudo rm -rf /home/ec2-user/deploy/` >> /home/ec2-user/deploy.log
+    sudo rm -rf /home/ec2-user/deploy/
+    echo "remove deploy folder" >> /home/ec2-user/deploy.log
 fi
-    echo make dir deploy `sudo mkdir -vp /home/ec2-user/deploy/` >> /home/ec2-user/deploy.log
+    sudo mkdir -vp /home/ec2-user/deploy/
+    echo "make dir deploy" >> /home/ec2-user/deploy.log
 
-echo start tomcat `sudo systemctl stop tomcat8` >> /home/ec2-user/deploy.log
+sudo systemctl stop tomcat8
+echo "start tomcat" >> /home/ec2-user/deploy.log
 
 
 # su - $WAS_ADM_USER -c "(source ${WAS_ENG_DIR}/shutdown.sh)"
