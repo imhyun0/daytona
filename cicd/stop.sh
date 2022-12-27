@@ -2,6 +2,7 @@
 WAS_ENG_DIR=/usr/local/tomcat8/bin
 WAS_ADM_USER=ec2-user
 
+echo `date` > /home/ec2-user/deploy.log
 echo "application_stop!!!" >> /home/ec2-user/deploy.log
 
 if [ -d /home/ec2-user/deploy ]; then
