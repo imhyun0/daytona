@@ -12,7 +12,7 @@ fi
     echo "make dir deploy" >> /home/ec2-user/deploy.log
 
 sudo systemctl stop tomcat8
-echo "start tomcat" >> /home/ec2-user/deploy.log
+echo "stop tomcat" >> /home/ec2-user/deploy.log
 
 
 # su - $WAS_ADM_USER -c "(source ${WAS_ENG_DIR}/shutdown.sh)"
