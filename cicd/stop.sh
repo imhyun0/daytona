@@ -6,10 +6,10 @@ echo `date` > /home/ec2-user/deploy.log
 echo "application_stop!!!" >> /home/ec2-user/deploy.log
 
 if [ -d /home/ec2-user/deploy ]; then
-    sudo rm -rf /home/ec2-user/deploy/
+    rm -rf /home/ec2-user/deploy/
     echo "remove deploy folder" >> /home/ec2-user/deploy.log
 fi
-    sudo mkdir -vp /home/ec2-user/deploy/
+    su - ${WAS_ADM_USER} -c "mkdir -vp /home/ec2-user/deploy/"
     echo "make dir deploy" >> /home/ec2-user/deploy.log
 
 sudo systemctl stop tomcat8

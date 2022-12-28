@@ -11,13 +11,10 @@ if ls ${WORKING_DIR}/ 1> /dev/null 2>&1; then
     echo "remove deploy target folder" >> /home/ec2-user/deploy.log
 fi
 
-if ls ${WAS_DIR}/simpleweb1 1> /dev/null 2>&1; then
-    rm -rf ${WAS_DIR}/simpleweb1
+if ls ${WAS_DIR} 1> /dev/null 2>&1; then
+    rm -rf ${WAS_DIR}
     echo "remove simpleweb1 folder" >> /home/ec2-user/deploy.log
 fi
 
-if [ -e ${WAS_DIR}/${WAR_FILE} ]; then
-    rm ${WAS_DIR}/${WAR_FILE}
-    echo "remove applications folder's war file" >> /home/ec2-user/deploy.log
-    # su - ${WAS_ADM_USER} -c "rm ${WAS_DIR}/${WAR_FILE}"
-fi
+su - ${WAS_ADM_USER} -c "mkdir -vp ${WAS_DIR}"
+echo "make dir deploy" >> /home/ec2-user/deploy.log
