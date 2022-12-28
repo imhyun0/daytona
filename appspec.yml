@@ -6,15 +6,15 @@ files:
 permissions:
   - object: /
     pattern: "**"
-    owner: ec2-user
-    group: ec2-user
+    # owner: ec2-user
+    # group: ec2-user
 hooks:
   ApplicationStop:
     - location: cicd/stop.sh
-      runas: ec2-user
+      # runas: ec2-user
   BeforeInstall:
     - location: cicd/before_install.sh
-      runas: ec2-user
+      # runas: ec2-user
   ApplicationStart:
     - location: cicd/start.sh
-      runas: ec2-user
+      # runas: ec2-user
