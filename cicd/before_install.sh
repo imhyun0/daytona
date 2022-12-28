@@ -16,5 +16,5 @@ if ls ${WAS_DIR} 1> /dev/null 2>&1; then
     echo "remove simpleweb1 folder" >> /home/ec2-user/deploy.log
 fi
 
-su - ${WAS_ADM_USER} -c "mkdir -vp ${WAS_DIR}"
+mkdir -vp ${WAS_DIR}
 echo "make dir deploy" >> /home/ec2-user/deploy.log

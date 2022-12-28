@@ -9,7 +9,7 @@ if [ -d /home/ec2-user/deploy ]; then
     rm -rf /home/ec2-user/deploy/
     echo "remove deploy folder" >> /home/ec2-user/deploy.log
 fi
-    su - ${WAS_ADM_USER} -c "mkdir -vp /home/ec2-user/deploy/"
+    mkdir -vp /home/ec2-user/deploy/
     echo "make dir deploy" >> /home/ec2-user/deploy.log
 
 sudo systemctl stop tomcat8
