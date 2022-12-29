@@ -63,7 +63,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.3</version>
 				<configuration>
-					<warSourceDirectory>webapp</warSourceDirectory>
+					<warSourceDirectory>src/main/webapp</warSourceDirectory>
 				</configuration>
 			</plugin>
   	</plugins>
