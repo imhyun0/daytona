@@ -6,9 +6,13 @@ WAS_ADM_USER=ec2-user
 WORKING_DIR=/home/ec2-user/deploy/target
 SORC_WAR_FILE=$(ls /home/ec2-user/deploy/target/*.war)
 WAR_FILE=simpleweb1.war
+WAS_DEPLOY_DIR=simpleweb1
 
 echo "run application_start!!!" >> /home/ec2-user/deploy.log
 cp ${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE}
+cd ${WAS_DEPLOY_DIR}
+echo `pwd` >> /home/ec2-user/deploy.log
+jav -xvf ${WAS_DIR}/${WAR_FILE} >> /home/ec2-user/deploy.log
 echo "cp ${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE}" >> /home/ec2-user/deploy.log
 sudo systemctl start tomcat8
 echo "sudo systemctl start tomcat8" >> /home/ec2-user/deploy.log
