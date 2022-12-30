@@ -10,7 +10,6 @@ WAS_DEPLOY_DIR=/home/ec2-user/applications/simpleweb1
 
 echo "run application_start!!!" >> /home/ec2-user/deploy.log
 cp ${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE} >> /home/ec2-user/deploy.log
-sudo chown -R ${WAS_DEPLOY_DIR} >> /home/ec2-user/deploy.log
 cd ${WAS_DEPLOY_DIR} >> /home/ec2-user/deploy.log
 echo `pwd` >> /home/ec2-user/deploy.log
 jar -xvf ${WAS_DIR}/${WAR_FILE} >> /home/ec2-user/deploy.log
