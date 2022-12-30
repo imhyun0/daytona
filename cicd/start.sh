@@ -6,7 +6,7 @@ WAS_ADM_USER=ec2-user
 WORKING_DIR=/home/ec2-user/deploy/target
 SORC_WAR_FILE=$(ls /home/ec2-user/deploy/target/*.war)
 WAR_FILE=simpleweb1.war
-WAS_DEPLOY_DIR=simpleweb1
+WAS_DEPLOY_DIR=/home/ec2-user/applications/simpleweb1
 
 echo "run application_start!!!" >> /home/ec2-user/deploy.log
 cp ${SORC_WAR_FILE} ${WAS_DIR}/${WAR_FILE}
